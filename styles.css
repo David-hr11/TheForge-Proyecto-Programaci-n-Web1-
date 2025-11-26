@@ -17,7 +17,7 @@ body{
     height: 100px;
     box-sizing: border-box;
     width: 100%;
-    background-image: url("Multimedia/Madera.jpg");
+    background-image: url(Multimedia/Madera.jpg);
     background-size: 100% 100%;
     background-position: center;
     background-repeat: no-repeat;
@@ -739,4 +739,5 @@ body{
         flex-direction: column;
         text-align: center;
     }
+
 }
