@@ -1,0 +1,742 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;500;600;700&family=Lato:wght@300;400;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@300;400;500;600;700&display=swap');
+
+/* Configuración general */
+*{
+    box-sizing: border-box;
+}
+
+/* Resetear márgenes del documento */
+body{
+    margin: 0px;
+    padding: 0px;
+}
+
+/* Personalizar encabezado*/
+.header {
+    height: 100px;
+    box-sizing: border-box;
+    width: 100%;
+    background-image: url("Multimedia/Madera.jpg");
+    background-size: 100% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: inline-flex;
+    justify-content: space-between;   
+    align-items: center;
+    padding: 5px 10%;
+    position: fixed;
+    z-index: 1000;
+    
+}
+
+/* Personalizar logo del encabezado */
+.header .logo{
+    cursor: pointer;
+}
+
+.header .logo img{
+    height: 80px;
+    width: auto;
+    transition: all 0.3s;
+
+}
+
+/*Efecto cuando pasas cursor*/
+.header .logo img:hover{
+    transform: scale(1.2);
+}
+
+/* Personalizar contenedor de enlaces del encabezado */
+.header .nav-links{
+    list-style: none; 
+ 
+}
+
+/*Efecto cuando pasas cursor*/
+.header .nav-links li{
+    display: inline-block;
+    padding: 0 20px;
+    transition: all 0.3s;
+    gap: 30px;
+    white-space: nowrap;
+}
+/* Hacer grandes links encabezado con cursor*/
+.header .nav-links li:hover{
+     transform: scale(1.2);
+}
+
+/* Personalizar links del encabezado*/
+.header .nav-links a{
+    font-family: 'League Spartan', sans-serif;
+    font-size: clamp(18px,2.2vw,28px);
+    font-weight: 700;
+    color: white;
+    text-decoration: none;
+}
+
+.header .nav-links a:hover{
+    color:#FFB445 ;
+}
+/* Personalizar boton del encabezado*/
+.header .btn button{
+    font-weight: 700;
+    font-family: 'League Spartan', sans-serif;
+    color: #FFB445;
+    padding: clamp(6px, 1.2vw, 12px) clamp(16px, 2vw, 32px);
+    font-size: clamp(14px, 1.6vw, 28px);
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+}
+/* Cambiar color del boton con el cursor*/    
+.header .btn button:hover{
+    background-color:#FFB445;
+    color: white;
+    transform: scale(1.1);
+
+}
+
+#responsive-menu {
+    display: none;
+}
+
+/* Icono hamburguesa para menú responsive */
+.menu-icon {
+    display: none;
+    font-size: 35px;
+    color: white;
+    cursor: pointer;
+    user-select: none;
+}
+
+/* Responsive header*/
+@media (max-width: 768px) {
+
+    /* Mostrar ícono hamburguesa */
+    .menu-icon {
+        display: block;
+    }
+
+    /* Ocultar el menú inicialmente */
+    nav {
+        display: none;
+        position: absolute;
+        top: 100px;
+        right: 0;
+        width: 100%;
+        background-color: rgba(0,0,0,0.9);
+    }
+
+    nav ul {
+        display: flex;
+        flex-direction: column;
+        padding: 0;
+        margin: 0;
+        text-align: center;
+    }
+
+    nav ul li {
+        padding: 20px 0;
+        border-bottom: 1px solid #444;
+    }
+
+    nav ul li a {
+        font-size: 22px;
+    }
+
+    .btn {
+        display: none; /* Ocultar botón de contacto en celular */
+    }
+
+    /* Cuando el checkbox está marcado  mostrar menú */
+    #responsive-menu:checked ~ nav {
+        display: block;
+    }
+}
+
+/* Personalizar seccion del Inicio*/
+.inicio {
+    
+    min-height: 150vh;
+    background-image: url(Multimedia/Fondo_inicio.jpg);
+    background-size: 100% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding-top: 210px; 
+    padding-left: 10%;
+    padding-right: 10%;
+    display: flex;
+    align-items: self-start;
+    animation: fadeIn 2s ease-in-out;
+    
+    
+}
+
+/* Contenedor de la sección Nosotros */
+.us-container{
+    background: rgba(0, 0, 0, 0);
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 0 25px #ff8a05aa;
+    animation: fadeIn 2.8s ease-in-out;
+    
+}
+
+/* Título de la sección Nosotros */
+.us-title{
+    font-size: 45px;
+    color: #FFB445;
+    text-align: center;
+    margin-bottom: 30px;
+    font-family: 'Anton', sans-serif;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 0px #000;
+    animation: fadeIn 2.8s ease-in-out;
+}
+
+.us-container p{
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 1.6;
+    font-family: 'Lato', sans-serif;
+    text-shadow: 2px 2px 0px #000;
+    margin-bottom: 18px;
+    text-align: justify;
+    animation: fadeIn 2.2s ease-in-out;
+}
+
+/* Personalizar slogan */
+.slogan{
+    margin-top: 30px;
+    text-align: center;
+    font-size: 40px;
+    color: #ffb445;;
+    font-weight: 700;
+    text-shadow: 2px 2px 0px #000;
+    font-family: 'League Spartan', sans-serif;
+    letter-spacing: 1px;
+    animation: fadeIn 2.8s ease-in-out;
+}
+
+/*Animaciones */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive seccion Inicio*/
+@media (max-width: 992px) {
+
+    .inicio {
+        min-height: auto;
+        background-size: cover;
+        padding-top: 230px; 
+        padding-left: 8%;
+        padding-right: 8%;
+    }
+
+    .us-container {
+        padding: 30px;
+    }
+
+    .us-title {
+        font-size: 38px;
+    }
+
+    .us-container p {
+        font-size: 18px;
+    }
+
+    .slogan {
+        font-size: 32px;
+    }
+}
+
+/* celulares grandes */
+@media (max-width: 768px) {
+
+    .inicio {
+        padding-top: 200px;
+        padding-left: 6%;
+        padding-right: 6%;
+        background-position: top;
+    }
+
+    .us-container {
+        padding: 25px;
+    }
+
+    .us-title {
+        font-size: 32px;
+        letter-spacing: 1px;
+    }
+
+    .us-container p {
+        font-size: 16px;
+    }
+
+    .slogan {
+        font-size: 28px;
+    }
+}
+
+/* Celulares pequeños */
+@media (max-width: 480px) {
+
+    .inicio {
+        padding-top: 180px;
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
+    .us-container {
+        padding: 20px;
+        box-shadow: 0 0 15px #ff8a05aa;
+    }
+
+    .us-title {
+        font-size: 26px;
+    }
+
+    .us-container p {
+        font-size: 15px;
+        line-height: 1.5;
+    }
+
+    .slogan {
+        font-size: 22px;
+        margin-top: 20px;
+    }
+}
+
+
+
+
+/* Personalizar seccion del Menú*/
+.seccion-menu {
+    min-height: auto;
+    background-color: #111;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 60px 10%;
+    font-family: 'League Spartan', sans-serif;
+    border: 12px double #FFB445;
+    box-shadow: 0 0 12px #FF6A00;
+    animation: fadeIn 2s ease-in-out;
+    
+}
+
+
+/* Personalizar título del Menú*/
+.menu-title{
+    text-align: center;
+    font-size: 50px;
+    color: #FFB445;
+    text-shadow: 2px 2px 0px #FF6A00;
+    margin-bottom: 40px
+}
+
+/* Personalizar textos de las categorias del Menú*/
+.menu-category h2 {
+    font-size: 32px;
+    color: #FFB445;
+    margin-bottom: 20px;
+    border-left: 5px solid #FFB445;
+    padding-left: 10px;
+}
+
+/* Crear rejilla para los platillos y personalizarla*/
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 40px;
+    margin-bottom: 60px;
+}
+
+/* Personalizar items del menú*/
+.menu-item {
+    background: #1a1a1a;
+    padding: 20px;
+    border-radius: 12px;
+    border-top: 4px solid #FFB445;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+    
+}
+
+/* Personalizar textos de los items del menú*/
+.menu-item h3 {
+    text-align: center;
+    color: white;
+    font-size: 30px;
+    margin: 0 0 10px;
+}
+
+/* Personalizar aspecto de las imagenes de los items del menú*/
+.menu-item img{
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    border: 2px solid #FFB445;
+
+}
+/* Personalizar textos descripcion los items del menú*/
+.menu-item p {
+    text-align: center;
+    margin: 0;
+    font-size: 16px;
+    color: #ccc;
+}
+
+/* Movimiento de los items con el cursor*/
+.menu-item:hover {
+    transform: translateY(-10px);
+}
+
+/* Personalizar textos de Indicadores de bebidas*/
+.menu-category h4 {
+    font-size: 20px;
+    color: #FFB445;
+    margin-bottom: 20px;
+    border-bottom: 5px solid #FFB445;
+    padding-left: 10px;
+}
+
+/* Personalizar textos de Precios*/
+.menu-item h5 {
+    font-size: 20px;
+    color: #FFB445;
+    margin-bottom: 20px;
+    padding-left: 10px;
+    text-align: center;
+}
+
+/* Crear rejilla para los paquetes y personalizarla*/
+.menu-grid-paquetes {
+    display: grid;
+    grid-template-columns: 1fr; 
+    gap: 20px;
+    margin-bottom: 60px;
+}
+
+ /*Personalizar seccion de Galería¨*/
+.galeria {
+    min-height: auto;
+    width: 100%;
+    background-color: #111;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 60px 10%;
+    font-family: 'League Spartan', sans-serif;
+    border: 12px double #FFB445;
+    box-shadow: 0 0 12px #FF6A00;
+    animation: fadeIn 2s ease-in-out;
+
+
+    
+}
+
+/*Personalizar titulo de Galería¨*/
+.galeria-title{
+    text-align: center;
+    font-size: 50px;
+    color: #FFB445;
+    text-shadow: 2px 2px 0px #FF6A00;
+    margin-bottom: 40px
+}
+
+
+
+/*Contenedor carrusel*/
+.photo-container {
+    width: 100%;
+    max-width: 1800px;
+    height: 65vh;
+    min-height: 350px;
+    aspect-ratio: 16 / 9;
+    margin: 0 auto;
+    overflow: hidden;
+    border-radius: 12px;
+    border: 3px solid #FFB445;
+    background: #111;
+    box-shadow: 0 0 10px rgba(255, 106, 0, 0.4);
+    position: relative;
+    margin-bottom: 30px;
+    cursor: pointer;
+}
+
+/*Personalizar Slide*/
+.slide {
+    width: 700%;
+    height: 100%;
+    display: flex;
+    animation: slide 40s infinite;
+}
+
+/*Personalizar imagenes en el Slide*/
+.slide img {
+    width: calc(100% / 7);
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    background-color: #111;
+    
+}
+
+/* Animación del carrusel */
+@keyframes slide {
+    0%   { margin-left: 0%; }
+    10%  { margin-left: 0%; }
+
+    12%  { margin-left: -100%; }
+    22%  { margin-left: -100%; }
+
+    24%  { margin-left: -200%; }
+    34%  { margin-left: -200%; }
+
+    36%  { margin-left: -300%; }
+    46%  { margin-left: -300%; }
+
+    48%  { margin-left: -400%; }
+    58%  { margin-left: -400%; }
+
+    60%  { margin-left: -500%; }
+    70%  { margin-left: -500%; }
+
+    72%  { margin-left: -600%; }
+    82%  { margin-left: -600%; }
+
+    84%  { margin-left: -600%; }
+    100% { margin-left: 0%; }
+}
+
+/* Personalizar reseñas en general */
+.reseñas{  
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 40px;
+    margin-bottom: 60px;
+    cursor: pointer;
+    
+}
+
+/* Personalizar contenedor reseñas */
+.reseñas-card{
+    background: #1a1a1a;
+    border: 2px solid #FFB445;
+    border-radius: 8px;
+    padding: 15px;
+    color: #fff;
+    box-shadow: 0 0 6px #FF6A00;
+    transition: transform 0.3s ease;
+     
+}
+
+/* Personalizar estrellas de las reseñas */
+.stars{
+    text-align: center;
+    font-size: 30px;
+    text-shadow: 2px 2px 0px #000;
+}
+
+/* Personalizar texto contenedor reseñas */
+.reseñas-card h2 {
+    color: #ddd;
+    font-size: 18px;
+    text-align: center;
+}
+
+/* Estilo del nombre de usuario en reseñas */
+.user{
+    color: #ddd;
+    font-size: 14px;
+    text-align: center;
+}
+
+
+/*Efecto cursor reseñas*/
+.reseñas-card:hover {
+    transform: scale(1.05);    
+}
+
+/*Responsive carrusel*/
+@media (max-width: 768px) {
+    .photo-container {
+        height: 40vh;
+    }
+}
+
+@media (max-width: 480px) {
+    .photo-container {
+        height: 32vh;
+    }
+}
+
+/*  Personalizar seccion de promociones*/
+.promos-section {
+    min-height: 90vh;
+    background-color: #111;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 60px 10%;
+    font-family: 'League Spartan', sans-serif;
+    border: 12px double #FFB445;
+    box-shadow: 0 0 12px #FF6A00;
+    animation: fadeIn 2s ease-in-out;
+    
+}
+
+/*  Personalizar titulo de promociones*/
+.promos-title {
+    text-align: center;
+    font-size: 50px;
+    color: #FFB445;
+    text-shadow: 2px 2px 0px #FF6A00;
+    margin-bottom: 40px
+}
+
+/*  Personalizar cajitas de promociones*/
+.promos-container {
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 40px;
+    margin-bottom: 60px;
+    justify-items: center;
+
+}
+
+/*  Personalizar promociones en general*/
+.promo-card {
+    width: 100%;
+    max-width: 300px;
+    background: #1a1a1a;
+    border-radius: 12px;
+    border-top: 4px solid #FFB445;
+    padding: 25px;
+    color: white;
+    transition: transform .3s ease, box-shadow .3s ease;
+    cursor: pointer;
+}
+
+/*  Personalizar  imagenes de las promociones */
+.promo-card img{
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    border: 2px solid #FFB445;
+
+}
+
+/*Efecto cursor promociones*/
+.promo-card:hover {
+    transform: scale(1.05);    
+}
+
+/*Personalizar texto de promos*/
+.promo-card h3{
+    text-align: center;
+    color: white;
+    font-size: 30px;
+    margin: 0 0 10px;
+
+}
+
+/*Personalizar texto p de promos*/
+.promo-card p{
+    text-align: center;
+    margin: 0;
+    font-size: 16px;
+    color: #ccc;
+}
+
+/*Personalizar titulo de terminos y condiciones*/
+.terminos-title{
+    text-align: center;
+    margin: 0;
+    font-size: 10px;
+    color: #ccc;
+}
+
+/*Personalizar texto de terminos y condiciones*/
+.terms_conditions{
+    text-align: justify;
+    margin: 10;
+    font-size: 10px;
+    color: #ccc;
+}
+
+/*Personalizar div de certificaciones*/
+.certificaciones {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+/*Personalizar imagenes de certificaciones*/
+.certificaciones img {
+    max-width: 250px;        
+    width: 90%;              
+    border: 3px solid #FFB445;
+    border-radius: 10px;
+    box-shadow: 0 0 12px #FF6A00;
+}
+
+/*  Pie de página */
+.footer {
+    background: #1a1a1a;
+    color: #ccc;
+    padding: 30px 5%;
+    display: flex;
+    justify-content: space-between; /* Distribuye todo a lo largo */
+    align-items: flex-start;
+    flex-wrap: wrap; /* Para que no se rompa  */
+    gap: 20px;
+    font-family: 'League Spartan', sans-serif;
+}
+
+/*  Pie de página texto principal*/
+.footer-section h4 {
+    color: #FFB445;
+    margin-bottom: 5px;
+}
+
+/*  Pie de página texto secundario*/
+.footer-section p {
+    margin: 0;
+    font-size: 14px;
+}
+
+/*  Pie de página link */
+.github-link {
+    color: #FFB445;
+    text-decoration: none;
+}
+
+/*  Efecto cursor link */
+.github-link:hover {
+    color: #FF6A00;
+    text-decoration: underline;
+}
+
+/* RESPONSIVE pie pagina */
+@media (max-width: 768px) {
+    .footer {
+        flex-direction: column;
+        text-align: center;
+    }
+}
